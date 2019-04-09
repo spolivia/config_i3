@@ -1,0 +1,9 @@
+#!/bin/bash
+
+IP=$(curl ifconfig.me/ip)
+
+if [ "$IP" -eq "" ]; then
+    IP="Disconnected"
+fi
+ 
+echo "$IP"

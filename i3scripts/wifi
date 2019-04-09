@@ -1,0 +1,20 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+    1) pgrep -x dunst > /dev/null && notify-send "<b>Wifi :</b><br>$(iwconfig wlo1)";;
+	3) wpa_gui & ;;
+esac
+
+[ "$(cat /sys/class/net/"$1"/operstate)" = 'down' ] && wifiicon="📡"
+
+[ ! -n "${wifiicon+var}" ] && wifiicon=$(grep "^\s*w" /proc/net/wireless | awk '{ print "📶", int($3 * 100 / 70) "%" }')
+
+my_ip="$(ifconfig "$1" | grep inet | grep -v inet6 | cut -d ' ' -f 10)"
+
+my_ssid=$(iwgetid -r)
+
+printf "%s %s %s %s" \
+    "$(cat /sys/class/net/"$1"/operstate | sed "s/down/❌/;s/up/✅/")" \
+    "$wifiicon" \
+    "$my_ssid" \
+    "$my_ip"

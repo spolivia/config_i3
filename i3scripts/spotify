@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if pgrep -x "spotifyd" > /dev/null
+then
+    echo "🔵"
+else
+    echo "🔴"
+fi
+
+
+if [[ "${BLOCK_BUTTON}" -eq 3 ]]; then
+    i3 'exec "urxvt -e /home/seb/.cargo/bin/spotifyd --no-daemon"' 
+fi
+
