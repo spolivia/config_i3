@@ -1,12 +1,13 @@
 #!/bin/sh
-# Give a battery name (e.g. BAT0) as an argument.
+
+my_bat="BAT0"
 
 case $BLOCK_BUTTON in
-    1)  pgrep -x dunst >/dev/null && notify-send "<b>Battery:</b><br>$(upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state|time\ to\ full|percentage" | sed -E "s/ +/  /g" )" ;;
+    1)  pgrep -x dunst >/dev/null && notify-send "<b>Battery:</b><br>$(upower -i /org/freedesktop/UPower/devices/battery_$my_bat| grep -E "state|time\ to\ full|percentage" | sed -E "s/ +/  /g" )" ;;
 esac
 
-capacity=$(cat /sys/class/power_supply/"$1"/capacity) || exit
-status=$(cat /sys/class/power_supply/"$1"/status)
+capacity=$(cat /sys/class/power_supply/"$my_bat"/capacity) || exit
+status=$(cat /sys/class/power_supply/"$my_bat"/status)
 
 if [ "$capacity" -ge 75 ]; then
 	color="#00ff00"
