@@ -25,10 +25,10 @@ echo $SCRIPTPATH
 ln -s "$SCRIPTPATH/i3" ~/.config/i3
 ln -s "$SCRIPTPATH/dunst" ~/.config/dunst
 ln -s "$SCRIPTPATH/i3blocks/i3blocks.conf" ~/.i3blocks.conf
-echo "$SCRIPTPATH/i3scripts" ~/.i3scripts
-echo "$SCRIPTPATH/home_files/xsession" ~/.xsession
-echo "$SCRIPTPATH/home_files/xinitrc" ~/.xinitrc
-echo "$SCRIPTPATH/home_files/Xdefaults" ~/.Xdefaults
+ln -s "$SCRIPTPATH/i3scripts" ~/.i3scripts
+ln -s "$SCRIPTPATH/home_files/xsession" ~/.xsession
+ln -s "$SCRIPTPATH/home_files/xinitrc" ~/.xinitrc
+ln -s "$SCRIPTPATH/home_files/Xdefaults" ~/.Xdefaults
 
 [ ! -d ~/.wallpapers ] && mkdir ~/.wallpapers
 
