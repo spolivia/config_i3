@@ -1,6 +1,7 @@
 #!/bin/bash
 
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+echo $SCRIPTPATH 
 
 [ -d ~/.config/dunst ] && mv ~/.config/dunst ~/.backup_dunst
 [ -d ~/.config/i3 ] && mv ~/.config/i3 ~/.backup_configi3
@@ -22,8 +23,8 @@ SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 [ -L ~/.Xdefaults ] && rm ~/.Xdefaults 
 
 ln -s "$SCRIPTPATH/i3" ~/.config/i3
-echo "$SCRIPTPATH/dunst" ~/.config/dunst
-echo "$SCRIPTPATH/i3blocks/i3blocks.conf" ~/.i3blocks.conf
+ln -s "$SCRIPTPATH/dunst" ~/.config/dunst
+ln -s "$SCRIPTPATH/i3blocks/i3blocks.conf" ~/.i3blocks.conf
 echo "$SCRIPTPATH/i3scripts" ~/.i3scripts
 echo "$SCRIPTPATH/home_files/xsession" ~/.xsession
 echo "$SCRIPTPATH/home_files/xinitrc" ~/.xinitrc
