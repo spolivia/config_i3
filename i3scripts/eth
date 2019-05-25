@@ -1,14 +1,16 @@
 #!/bin/bash
 
-my_ip="$(ifconfig "$1" | grep inet | grep -v inet6 | cut -d ' ' -f 10)"
+my_eth="enp0s25"
+
+my_ip="$(ifconfig "$my_eth" | grep inet | grep -v inet6 | cut -d ' ' -f 10)"
 
 case $BLOCK_BUTTON in
-    1) pgrep -x dunst > /dev/null && notify-send "<b>$1:</b><br>$(ip a show dev enp0s25 | grep -v enp0s25  | sed -E "s/  +//g" | cut -d " " -f 1-2 | grep : | sed -E "s/ /<br>/g")";;
+    1) pgrep -x dunst > /dev/null && notify-send "<b>$my_eth:</b><br>$(ip a show dev enp0s25 | grep -v enp0s25  | sed -E "s/  +//g" | cut -d " " -f 1-2 | grep : | sed -E "s/ /<br>/g")";;
 esac
 
 wifiicon="✅"
 
-[ "$(cat /sys/class/net/"$1"/operstate)" = 'down' ] && wifiicon="❌"
+[ "$(cat /sys/class/net/"$my_eth"/operstate)" = 'down' ] && wifiicon="❌"
 
 printf "%s %s" "$wifiicon" \
                "$my_ip" 
