@@ -12,7 +12,7 @@ SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 [ -f ~/.Xdefaults ] && mv ~/.Xdefaults ~/.backup_Xdefaults
 
 
-# [ -L ~/.config/dunst ] && rm ~/.config/dunst
+[ -L ~/.config/dunst ] && rm ~/.config/dunst
 [ -L ~/.config/i3 ] && rm ~/.config/i3
 [ -L ~/.i3 ] && rm ~/.i3 
 [ -L ~/.i3scripts ] && rm ~/.i3scripts
