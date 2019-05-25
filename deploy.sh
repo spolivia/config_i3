@@ -21,7 +21,7 @@ SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 [ -L ~/.xinitrc ] && rm ~/.xinitrc 
 [ -L ~/.Xdefaults ] && rm ~/.Xdefaults 
 
-echo "$SCRIPTPATH/i3" ~/.config/i3
+ln -s "$SCRIPTPATH/i3" ~/.config/i3
 echo "$SCRIPTPATH/dunst" ~/.config/dunst
 echo "$SCRIPTPATH/i3blocks/i3blocks.conf" ~/.i3blocks.conf
 echo "$SCRIPTPATH/i3scripts" ~/.i3scripts
