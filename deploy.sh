@@ -3,33 +3,33 @@
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 echo $SCRIPTPATH 
 
-[ -d ~/.config/dunst ] && mv ~/.config/dunst ~/.backup_dunst
-[ -d ~/.config/i3 ] && mv ~/.config/i3 ~/.backup_configi3
-[ -d ~/.i3 ] && mv ~/.i3 ~/.backup_i3
-[ -d ~/.i3scripts ] && mv ~/.i3scripts ~/.backup_i3scripts
-[ -f ~/.i3bocks.conf ] && mv ~/.i3blocks.conf ~/.backup_i3blocks
-[ -f ~/.xsession ] && mv ~/.xsession ~/.backup_xsession
-[ -f ~/.xinitrc ] && mv ~/.xinitrc ~/.backup_xinitrc
-[ -f ~/.Xdefaults ] && mv ~/.Xdefaults ~/.backup_Xdefaults
+[ -d $HOME/.config/dunst ] && mv $HOME/.config/dunst $HOME/.backup_dunst
+[ -d $HOME/.config/i3 ] && mv $HOME/.config/i3 $HOME/.backup_configi3
+[ -d $HOME/.i3 ] && mv $HOME/.i3 $HOME/.backup_i3
+[ -d $HOME/.i3scripts ] && mv $HOME/.i3scripts $HOME/.backup_i3scripts
+[ -f $HOME/.i3bocks.conf ] && mv $HOME/.i3blocks.conf $HOME/.backup_i3blocks
+[ -f $HOME/.xsession ] && mv $HOME/.xsession $HOME/.backup_xsession
+[ -f $HOME/.xinitrc ] && mv $HOME/.xinitrc $HOME/.backup_xinitrc
+[ -f $HOME/.Xdefaults ] && mv $HOME/.Xdefaults $HOME/.backup_Xdefaults
 
 
-[ -L ~/.config/dunst ] && rm ~/.config/dunst
-[ -L ~/.config/i3 ] && rm ~/.config/i3
-[ -L ~/.i3 ] && rm ~/.i3 
-[ -L ~/.i3scripts ] && rm ~/.i3scripts
-[ -L ~/.i3blocks.conf ] && rm ~/.i3blocks.conf 
-[ -L ~/.xsession ] && rm ~/.xsession 
-[ -L ~/.xinitrc ] && rm ~/.xinitrc 
-[ -L ~/.Xdefaults ] && rm ~/.Xdefaults 
+[ -L $HOME/.config/dunst ] && rm $HOME/.config/dunst
+[ -L $HOME/.config/i3 ] && rm $HOME/.config/i3
+[ -L $HOME/.i3 ] && rm $HOME/.i3 
+[ -L $HOME/.i3scripts ] && rm $HOME/.i3scripts
+[ -L $HOME/.i3blocks.conf ] && rm $HOME/.i3blocks.conf 
+[ -L $HOME/.xsession ] && rm $HOME/.xsession 
+[ -L $HOME/.xinitrc ] && rm $HOME/.xinitrc 
+[ -L $HOME/.Xdefaults ] && rm $HOME/.Xdefaults 
 
-ln -s "$SCRIPTPATH/i3" ~/.config/i3
-ln -s "$SCRIPTPATH/dunst" ~/.config/dunst
-ln -s "$SCRIPTPATH/i3blocks/i3blocks.conf" ~/.i3blocks.conf
-ln -s "$SCRIPTPATH/i3scripts" ~/.i3scripts
-ln -s "$SCRIPTPATH/home_files/xsession" ~/.xsession
-ln -s "$SCRIPTPATH/home_files/xinitrc" ~/.xinitrc
-ln -s "$SCRIPTPATH/home_files/Xdefaults" ~/.Xdefaults
+ln -s "$SCRIPTPATH/i3" $HOME/.config/i3
+ln -s "$SCRIPTPATH/dunst" $HOME/.config/dunst
+ln -s "$SCRIPTPATH/i3blocks/i3blocks.conf" $HOME/.i3blocks.conf
+ln -s "$SCRIPTPATH/i3scripts" $HOME/.i3scripts
+ln -s "$SCRIPTPATH/home_files/xsession" $HOME/.xsession
+ln -s "$SCRIPTPATH/home_files/xinitrc" $HOME/.xinitrc
+ln -s "$SCRIPTPATH/home_files/Xdefaults" $HOME/.Xdefaults
 
-[ ! -d ~/.wallpapers ] && mkdir ~/.wallpapers
+[ ! -d $HOME/.wallpapers ] && mkdir $HOME/.wallpapers
 
 
