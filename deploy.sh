@@ -22,9 +22,12 @@ echo $SCRIPTPATH
 [ -L $HOME/.xinitrc ] && rm $HOME/.xinitrc 
 [ -L $HOME/.Xdefaults ] && rm $HOME/.Xdefaults 
 
-ln -s "$SCRIPTPATH/i3" $HOME/.config/i3            # FIXME BUG
-ln -s "$SCRIPTPATH/dunst" $HOME/.config/dunst      # FIXME BUG
-ln -s "$SCRIPTPATH/i3scripts" $HOME/.i3scripts     # FIXME BUG
+cd $HOME/.config
+ln -s "$SCRIPTPATH/i3" i3            
+ln -s "$SCRIPTPATH/dunst" dunst    
+
+cd $HOME
+ln -s "$SCRIPTPATH/i3scripts" .i3scripts   
 
 ln -s "$SCRIPTPATH/i3blocks/i3blocks.conf" $HOME/.i3blocks.conf
 ln -s "$SCRIPTPATH/home_files/xsession" $HOME/.xsession
@@ -32,5 +35,4 @@ ln -s "$SCRIPTPATH/home_files/xinitrc" $HOME/.xinitrc
 ln -s "$SCRIPTPATH/home_files/Xdefaults" $HOME/.Xdefaults
 
 [ ! -d $HOME/.wallpapers ] && mkdir $HOME/.wallpapers
-
 
