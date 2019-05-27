@@ -1,38 +1,49 @@
 #!/bin/bash
 
-SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
-echo $SCRIPTPATH 
+SCRIPT_PATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
-[ -d $HOME/.config/dunst ] && mv $HOME/.config/dunst $HOME/.backup_dunst
-[ -d $HOME/.config/i3 ] && mv $HOME/.config/i3 $HOME/.backup_configi3
-[ -d $HOME/.i3 ] && mv $HOME/.i3 $HOME/.backup_i3
-[ -d $HOME/.i3scripts ] && mv $HOME/.i3scripts $HOME/.backup_i3scripts
-[ -f $HOME/.i3bocks.conf ] && mv $HOME/.i3blocks.conf $HOME/.backup_i3blocks
-[ -f $HOME/.xsession ] && mv $HOME/.xsession $HOME/.backup_xsession
-[ -f $HOME/.xinitrc ] && mv $HOME/.xinitrc $HOME/.backup_xinitrc
-[ -f $HOME/.Xdefaults ] && mv $HOME/.Xdefaults $HOME/.backup_Xdefaults
+deploy_to_target() {
 
+  local BACKUP_DIR="$HOME/.backup/"
+  local TARGET_DIR=`dirname $2`
+  local TARGET=`basename $2`
+  
+  echo "Linking : $2 => $SCRIPT_PATH/$1"
+  
+  # if the .config_backup folder doesn't exist, create it
+   
+  if [ ! -d "$BACKUP_DIR" ]; then
+    echo "   $BACKUP_DIR is missing. Creating it ... "
+    mkdir $BACKUP_DIR && echo "     Success"
+  fi
+  
+  if [ -L $2 ]; then
+    echo "   Old $2 is a symbolic link. Removing it"
+    rm -f $2 
+  fi
 
-[ -L $HOME/.config/dunst ] && rm $HOME/.config/dunst
-[ -L $HOME/.config/i3 ] && rm $HOME/.config/i3
-[ -L $HOME/.i3 ] && rm $HOME/.i3 
-[ -L $HOME/.i3scripts ] && rm $HOME/.i3scripts
-[ -L $HOME/.i3blocks.conf ] && rm $HOME/.i3blocks.conf 
-[ -L $HOME/.xsession ] && rm $HOME/.xsession 
-[ -L $HOME/.xinitrc ] && rm $HOME/.xinitrc 
-[ -L $HOME/.Xdefaults ] && rm $HOME/.Xdefaults 
+  if [ -d $2 ]; then
+    echo "   Old $2 is a directory. Moving it to backup folder"
+    mv -f $2 $BACKUP_DIR 
+  fi
 
-cd $HOME/.config
-ln -s "$SCRIPTPATH/i3" i3            
-ln -s "$SCRIPTPATH/dunst" dunst    
+  if [ -e $2 ]; then
+    echo "   Old $2 is a file. Moving it to backup folder"
+    mv -f $2 $BACKUP_DIR 
+  fi
 
-cd $HOME
-ln -s "$SCRIPTPATH/i3scripts" .i3scripts   
+  cd $TARGET_DIR
+  ln -s "$SCRIPT_PATH/$1" $TARGET            
 
-ln -s "$SCRIPTPATH/i3blocks/i3blocks.conf" $HOME/.i3blocks.conf
-ln -s "$SCRIPTPATH/home_files/xsession" $HOME/.xsession
-ln -s "$SCRIPTPATH/home_files/xinitrc" $HOME/.xinitrc
-ln -s "$SCRIPTPATH/home_files/Xdefaults" $HOME/.Xdefaults
+}
+
+deploy_to_target "dunst" "$HOME/.config/dunst"
+deploy_to_target "i3" "$HOME/.config/i3"
+deploy_to_target "i3scripts" "$HOME/.i3scripts"
+deploy_to_target "i3blocks/i3blocks.conf" "$HOME/.i3blocks.conf"
+deploy_to_target "home_files/xsession" "$HOME/.xsession"
+deploy_to_target "home_files/xinitrc" "$HOME/.xinitrc"
+deploy_to_target "home_files/Xdefaults" "$HOME/.Xdefaults"
 
 [ ! -d $HOME/.wallpapers ] && mkdir $HOME/.wallpapers
 
