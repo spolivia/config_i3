@@ -31,11 +31,11 @@ except ImportError:
 # _Settings____________________________________________________________________
 
 config = {
-    'HOST': 'EMAIL_SERVER',
+    'HOST': 'mail.codices.org',
     'PORT': 993,
-    'USER': 'EMAIL_LOGIN',
-    'PASS': 'EMAIL_PASSWORD',
-    'URL': 'EMAIL_URL'
+    'USER': 'XXXXXXXXX',
+    'PASS': 'YYYYYYYYY',
+    'URL':  'ZZZZZZZZZ'
 }
 # _____________________________________________________________________________
 
