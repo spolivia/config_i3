@@ -1,7 +1,6 @@
 URxvt.geometry: 74x27
 
-URxvt.font: xft:DejaVu Sans Mono:size=10
-URxvt.boldFont: xft:DejaVu Sans Mono:size=10
+URxvt.font: xft:DejaVu Sans Mono:size=8,xft:Symbola
 
 URxvt*saveLines: 10000
 URxvt*scrollBar: true
