@@ -13,7 +13,7 @@ set $wallpapers_script /home/seb/.config/i3/random_wallpaper
 # Tools
 
 set $browser           firefox-bin
-set $term              kitty
+set $term              styx
 set $lock              xtrlock
 set $volmute           amixer set Master 0
 set $volmore           amixer set Master 10%+
