@@ -1,6 +1,6 @@
 #!/bin/sh
 
-my_eth="wlo1"
+my_eth="wlp2s0"
 
 case $BLOCK_BUTTON in
     1) pgrep -x dunst > /dev/null && notify-send "<b>Wifi :</b><br>$(iwconfig $my_eth)";;

@@ -1,7 +1,7 @@
 URxvt.geometry: 74x27
 
-URxvt.font: xft:DejaVu Sans Mono:size=10
-URxvt.boldFont: xft:DejaVu Sans Mono:size=10
+URxvt.font: xft:DejaVu Sans Mono:size=12
+URxvt.boldFont: xft:DejaVu Sans Mono:size=12
 
 URxvt*saveLines: 10000
 URxvt*scrollBar: true
@@ -16,22 +16,53 @@ URxvt*background: #101010
 urxvt*depth: 32
 urxvt*background: rgba:0000/0000/0200/ef00
 
-URxvt*color0: #101010
-URxvt*color1: #f13a21
-URxvt*color2: #93f91d
-URxvt*color3: #ffd00a
-URxvt*color4: #004f9e
-URxvt*color5: #ec0048
-URxvt*color6: #2aa7e7
-URxvt*color7: #f2f2f2
-URxvt*color8: #1d202f
-URxvt*color9: #ff361e
-URxvt*color10: #ffc005
-URxvt*color11: #93ff00
-URxvt*color12: #0071ff
-URxvt*color13: #ef0051
-URxvt*color14: #4bb8fd
-URxvt*color15: #a020f0
+#Gris tres fonce (GRAY)
+URxvtcolor0: #3f3f3f
+
+#Rose Saumon (RED)
+URxvtcolor1: #F4E5FC
+
+#Vert pomme (GREEN)
+URxvtcolor2: #8cc72c 
+
+#Jaune (YELLOW)
+URxvtcolor3: #dfcf8f
+
+#Bleu fonce (BLUE) 
+URxvtcolor4: #506070
+
+#Rose fonc (PURPLE)
+URxvtcolor5: #dc8cc3
+
+#Bleu ciel (CYAN)
+URxvtcolor6: #8cd0d3
+
+#Gris clair (GRAY)
+URxvtcolor7: #dcdccc
+
+#Gris fonc (LIGHT_GRAY)
+URxvtcolor8: #709080
+
+#Bleu eau/Cyan (???) PAS RETROUVE DANS LES MODELES 
+URxvtcolor9: #cc5454
+
+#Jaune/orange (LIGHT_GREEN) 
+URxvtcolor10: #4d9f4d
+
+#Vert ??? x2 pas de correspondance 
+URxvtcolor11: #f0dfaf
+
+#Bleu (LIGHT_BLUE)
+URxvtcolor12: #4286be
+
+#Rose fonc (LIGHT_PURLE)
+URxvtcolor13: #ec93d3
+
+#Cyan clair (LIGHT_CYAN)
+URxvtcolor14: #93e0e3
+
+#Blanc
+URxvtcolor15: #ffffff
 
 URxvt.keysym.S-Up: \033[1;2A
 URxvt.keysym.S-Down: \033[1;2B
@@ -53,3 +84,5 @@ URxvt.iso14755_52: false
 
 URxvt.cursorBlink: 1
 URxvt.cursorUnderline: 1
+
+Xcursor.size: 32

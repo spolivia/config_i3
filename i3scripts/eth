@@ -1,11 +1,11 @@
 #!/bin/bash
 
-my_eth="enp0s25"
+my_eth="enp0s31f6"
 
 my_ip="$(ifconfig "$my_eth" | grep inet | grep -v inet6 | cut -d ' ' -f 10)"
 
 case $BLOCK_BUTTON in
-    1) pgrep -x dunst > /dev/null && notify-send "<b>$my_eth:</b><br>$(ip a show dev enp0s25 | grep -v enp0s25  | sed -E "s/  +//g" | cut -d " " -f 1-2 | grep : | sed -E "s/ /<br>/g")";;
+    1) pgrep -x dunst > /dev/null && notify-send "<b>$my_eth:</b><br>$(ip a show dev enp0s31f6 | grep -v enp0s31f6  | sed -E "s/  +//g" | cut -d " " -f 1-2 | grep : | sed -E "s/ /<br>/g")";;
 esac
 
 wifiicon="✅"

@@ -7,13 +7,13 @@ set $mod Mod4
 # Paths
 
 set $spoticli_path     $spoticli_path
-set $wallpapers_path   /home/seb/.wallpapers
-set $wallpapers_script /home/seb/.config/i3/random_wallpaper
+set $wallpapers_path   /home/olivia/.wallpapers
+set $wallpapers_script /home/olivia/.config_i3/i3/random_wallpaper
 
 # Tools
 
-set $browser           firefox-bin
-set $term              urxvt
+set $browser           firefox
+set $term              styx
 set $lock              xtrlock
 set $volmute           amixer set Master 0
 set $volmore           amixer set Master 10%+
@@ -23,12 +23,12 @@ set $micmute           amixer set Capture toggle
 # Starts Services
 exec --no-startup-id dunst
 exec --no-startup-id xcompmgr
-exec --no-startup-id $wallpapers_script $wallpapers_path
+#exec --no-startup-id "/home/olivia/.config_i3/i3/random_wallpaper /home/olivia/.wallpapers"
+exec --no-startup-id feh --bg-scale /home/olivia/.wallpapers/octo1.jpg
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
-
+font pango:DejaVu Sans Mono 10
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -154,7 +154,7 @@ bindsym $mod+Control+Down move workspace to output down
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Mode to resize windows
 
@@ -192,7 +192,7 @@ mode "music" {
     bindsym $mod+Right        exec --no-startup-id "$spoticli_path/spoticli_next ; notify-send NEXT"
     bindsym $mod+Up           exec --no-startup-id $volmore
     bindsym $mod+Down         exec --no-startup-id $volless
-    bindsym $mod+twosuperior  exec --no-startup-id $term -e /home/seb/.cargo/bin/spotifyd --no-daemon  
+    bindsym $mod+twosuperior  exec --no-startup-id $term -e /home/olivia/.cargo/bin/spotifyd --no-daemon  
     bindsym $mod+ampersand    exec --no-startup-id "$spoticli_path/spoticli_transfer_to_device Gremlins ; notify-send 'Listening on Gremlins'"
     bindsym $mod+eacute       exec --no-startup-id "$spoticli_path/spoticli_transfer_to_device Asimov ; notify-send 'Listening on Asimov'"
     bindsym $mod+F1           exec --no-startup-id "$spoticli_path/spoticli_play_uri spotify:playlist:7vkO2z2Ym0ahAYboR7yxrb ; notify-send 'Playlist Seb'"
@@ -217,7 +217,7 @@ bar {
 }
 
 bindsym $mod+x                  exec --no-startup-id pkill -RTMIN+5 i3blocks
-bindsym $mod+w                  exec --no-startup-id $wallpapers_script $wallpapers_path
+bindsym $mod+w                  exec --no-startup-id "/home/olivia/.config_i3/i3/random_wallpaper /home/olivia/.wallpapers"
 bindsym $mod+Escape             exec --no-startup-id $lock
 bindsym $mod+BackSpace          exec --no-startup-id $browser
 
