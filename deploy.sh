@@ -43,7 +43,8 @@ deploy_to_target "i3scripts" "$HOME/.i3scripts"
 deploy_to_target "i3blocks/i3blocks.conf" "$HOME/.i3blocks.conf"
 deploy_to_target "home_files/xsession" "$HOME/.xsession"
 deploy_to_target "home_files/xinitrc" "$HOME/.xinitrc"
-deploy_to_target "home_files/Xdefaults" "$HOME/.Xdefaults"
+deploy_to_target "urxvt/Xresources" "$HOME/.Xresources"
+deploy_to_target "kitty" "$HOME/.config/kitty"
 
 [ ! -d $HOME/.wallpapers ] && mkdir $HOME/.wallpapers
 

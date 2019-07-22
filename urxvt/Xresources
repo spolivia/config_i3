@@ -16,6 +16,7 @@ URxvt*background: #101010
 urxvt*depth: 32
 urxvt*background: rgba:0000/0000/0200/ef00
 
+<<<<<<< HEAD:home_files/Xdefaults
 #Gris tres fonce (GRAY)
 URxvtcolor0: #3f3f3f
 
@@ -63,6 +64,24 @@ URxvtcolor14: #93e0e3
 
 #Blanc
 URxvtcolor15: #ffffff
+=======
+URxvt*color0: #191919
+URxvt*color1: #dc657d
+URxvt*color2: #84b97c
+URxvt*color3: #c3ba63
+URxvt*color4: #639ee4
+URxvt*color5: #b888e2
+URxvt*color6: #4bb1a7
+URxvt*color7: #a7a7a7
+URxvt*color8: #5f5a60
+URxvt*color9: #ff361e
+URxvt*color10: #93ff00
+URxvt*color11: #ffc005
+URxvt*color12: #0071ff
+URxvt*color13: #ef0051
+URxvt*color14: #4bb8fd
+URxvt*color15: #eeeeee
+>>>>>>> dce75471f6b21a2a42e4399d52640185de6a5d6c:urxvt/Xresources
 
 URxvt.keysym.S-Up: \033[1;2A
 URxvt.keysym.S-Down: \033[1;2B
