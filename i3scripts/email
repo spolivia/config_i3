@@ -33,9 +33,9 @@ except ImportError:
 config = {
     'HOST': 'mail.codices.org',
     'PORT': 993,
-    'USER': 'XXXXXXXXX',
-    'PASS': 'YYYYYYYYY',
-    'URL':  'ZZZZZZZZZ'
+    'USER': 'projet',
+    'PASS': 'OliviaSebastien',
+    'URL':  'http://www.perdu.com'
 }
 # _____________________________________________________________________________
 
